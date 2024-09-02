@@ -4,11 +4,12 @@ import { LoginComponent } from '../login/login.component';
 import { AccountComponent } from '../account/account.component';
 import { ChatComponent } from '../chat/chat.component';
 import { VerificationComponent } from '../verification/verification.component';
+import { RolesComponent } from '../roles/roles.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,LoginComponent,AccountComponent,ChatComponent,VerificationComponent,RouterLink],
+  imports: [RouterOutlet,LoginComponent,AccountComponent,ChatComponent,VerificationComponent,RolesComponent,RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
