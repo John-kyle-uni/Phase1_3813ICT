@@ -1,0 +1,24 @@
+
+{
+  "users": {
+    "user1": {
+      "id": "4",
+      "username": "user",
+      "email": "user@email.com",
+      "roles": ["User"]
+    },
+    "unauthenticatedUser": null,
+    "superAdmin": {
+      "id": "1",
+      "username": "admin",
+      "email": "superadmin@email.com",
+      "roles": ["superAdmin"]
+    },
+    "groupAdmin": {
+      "id": "2",
+      "username": "groupadmin",
+      "email": "groupadmin@email.com",
+      "roles": ["groupadmin"]
+    }
+  }
+}

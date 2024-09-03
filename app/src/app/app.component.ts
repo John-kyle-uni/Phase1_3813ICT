@@ -5,6 +5,7 @@ import { AccountComponent } from '../account/account.component';
 import { ChatComponent } from '../chat/chat.component';
 import { VerificationComponent } from '../verification/verification.component';
 import { RolesComponent } from '../roles/roles.component';
+import { GroupManagementComponent } from '../group-management/group-management.component';
 
 @Component({
   selector: 'app-root',
@@ -16,3 +17,4 @@ import { RolesComponent } from '../roles/roles.component';
 export class AppComponent {
   title = 'app';
 }
+

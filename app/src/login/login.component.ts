@@ -25,7 +25,7 @@ export class LoginComponent {
     const user = this.users.find (u => u.username === this.username && u.password === this.password);
 
     if (user) {
-      localStorage.setItem('username',this.username);
+      localStorage.setItem('user',this.username);
       this.router.navigate(['/verification']);
 
     } else {
