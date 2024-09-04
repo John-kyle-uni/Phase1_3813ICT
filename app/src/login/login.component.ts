@@ -35,13 +35,14 @@ export class LoginComponent {
     
     if (useradmin) {
       localStorage.setItem('user',this.username);
-      localStorage.setItem('email',this.email)
+      localStorage.setItem('email',this.email);
       this.router.navigate(['/nav']);
 
     } 
     if  (user) 
     {
       localStorage.setItem('user',this.username);
+      localStorage.setItem('email',this.email);
       this.router.navigate(['/verification']);
     }
     

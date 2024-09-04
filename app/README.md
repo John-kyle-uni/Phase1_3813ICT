@@ -21,5 +21,14 @@ List of components:
     - This page will show up after the login page to verify the user.
 - Chat component
     - this component will have the main codes such us the group chats and more.
+- Group-management component
+    - this would only be accessable to group admins and super admins. This page is where admins can create and delete groups.
+- Nav component
+    - this is the page only seen by the admins where they can edit the groups and add or delete users and their roles.
+- Roles component 
+    - this is the component available for admins only and they can add or remove roles from users.
 
 Each component has a route created to use and to navigate to those pages.
+
+## API
+The Login component has a function once the submit button is clicked the information of the user is saved allowing the to view the website either as a user or an admin.
