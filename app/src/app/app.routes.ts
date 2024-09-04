@@ -10,6 +10,7 @@ import { GroupManagementComponent } from '../group-management/group-management.c
 import { AuthGuard } from '../auth.guard';
 import { NavComponent } from '../nav/nav.component';
 import { UserDashboardComponent } from '../user-dashboard/user-dashboard.component';
+import { GroupsComponent } from '../groups/groups.component';
 
 
 
@@ -21,6 +22,7 @@ export const routes: Routes = [
     {path: 'nav' , component: NavComponent},
     { path: 'user-dashboard', component: UserDashboardComponent},
     {path: 'verification', component:VerificationComponent},
+    {path: 'groups' , component:GroupsComponent},
     {path: 'roles' , component:RolesComponent , canActivate: [AuthGuard]},
     {path: 'group-management', component:GroupManagementComponent , canActivate: [AuthGuard]}
 ];

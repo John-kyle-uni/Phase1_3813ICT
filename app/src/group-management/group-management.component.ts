@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-group-management',
@@ -9,4 +10,8 @@ import { Component } from '@angular/core';
 })
 export class GroupManagementComponent {
 
+    createGroup(){
+      alert("Hello world");
+    }
+  
 }

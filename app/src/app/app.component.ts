@@ -8,12 +8,13 @@ import { RolesComponent } from '../roles/roles.component';
 import { GroupManagementComponent } from '../group-management/group-management.component';
 import { NavComponent } from '../nav/nav.component';
 import { UserDashboardComponent } from '../user-dashboard/user-dashboard.component';
+import { GroupsComponent } from '../groups/groups.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet,LoginComponent,AccountComponent,ChatComponent,
-    VerificationComponent,RolesComponent,GroupManagementComponent,NavComponent,UserDashboardComponent,RouterLink],
+    VerificationComponent,RolesComponent,GroupManagementComponent,NavComponent,UserDashboardComponent,GroupsComponent,RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

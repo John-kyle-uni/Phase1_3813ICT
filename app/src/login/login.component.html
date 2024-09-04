@@ -19,7 +19,7 @@
 </style>
 <body>
 <div class = "form1" >
-    <form (ngSubmit)="login()">
+    <form (ngSubmit)="login()" (ngSubmit)="onsubmit()">
         <div class = "level1">
             <label for="username">Username:</label>
             <input type="text" id="username" [(ngModel)]="username" name="username" required>
@@ -27,6 +27,10 @@
         <div  class = "level1" >
             <label for="password">Password:</label>
             <input type="password" id="password" [(ngModel)]="password" name="password" required>
+        </div>
+        <div  class = "level1" >
+            <label for="email">email:</label>
+            <input type="text" id="email" [(ngModel)]="email" name="email" required>
         </div>
         <div  class = "level1">
             <button type="submit">Login</button>

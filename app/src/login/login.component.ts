@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   username:string = '' ;
   password:string  = '' ;
+  email: string = '';
 
   usersadmins = [
     { username: 'super',password: '123'},
@@ -21,7 +22,11 @@ export class LoginComponent {
     { username: 'user1', password: 'user1' },
     { username: 'user2', password: 'user2' }
   ]
+  saveuser = [{
+    username: [''],
+    email: [''],
 
+  }]
   constructor(private router: Router ) {}
   
   login(){
@@ -30,6 +35,7 @@ export class LoginComponent {
     
     if (useradmin) {
       localStorage.setItem('user',this.username);
+      localStorage.setItem('email',this.email)
       this.router.navigate(['/nav']);
 
     } 
@@ -39,5 +45,8 @@ export class LoginComponent {
       this.router.navigate(['/verification']);
     }
     
+  }
+  onsubmit(){
+    alert('hello')
   }
 }
