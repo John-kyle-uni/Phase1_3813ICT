@@ -8,6 +8,8 @@ import { RolesComponent } from '../roles/roles.component';
 import path from 'path';
 import { GroupManagementComponent } from '../group-management/group-management.component';
 import { AuthGuard } from '../auth.guard';
+import { NavComponent } from '../nav/nav.component';
+
 
 
 
@@ -15,6 +17,7 @@ export const routes: Routes = [
     {path: 'login', component:LoginComponent},
     {path: 'account', component:AccountComponent},
     {path: 'chat', component:ChatComponent},
+    {path: 'nav' , component: NavComponent},
     {path: 'verification', component:VerificationComponent},
     {path: 'roles' , component:RolesComponent , canActivate: [AuthGuard]},
     {path: 'group-management', component:GroupManagementComponent , canActivate: [AuthGuard]}

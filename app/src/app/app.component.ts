@@ -6,11 +6,13 @@ import { ChatComponent } from '../chat/chat.component';
 import { VerificationComponent } from '../verification/verification.component';
 import { RolesComponent } from '../roles/roles.component';
 import { GroupManagementComponent } from '../group-management/group-management.component';
+import { NavComponent } from '../nav/nav.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,LoginComponent,AccountComponent,ChatComponent,VerificationComponent,RolesComponent,RouterLink],
+  imports: [RouterOutlet,LoginComponent,AccountComponent,ChatComponent,
+    VerificationComponent,RolesComponent,GroupManagementComponent,NavComponent,RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

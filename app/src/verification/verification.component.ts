@@ -28,7 +28,7 @@ export class VerificationComponent {
   
       if (user) {
         localStorage.setItem('username',this.username);
-        this.router.navigate(['/chat']);
+        this.router.navigate(['/nav']);
   
       } else {
         alert('Account Invalid, Try Again');
