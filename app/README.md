@@ -1,27 +1,34 @@
-# App
+# Documentation
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.9.
+## Git
 
-## Development server
+First is to setup the angular/cli into the terminal to have a base structure to complete the task. After setting up, the development branch was created to avoid always updating the main branch and to avoid mistakes. For my git documentation, when a feature or requirement is done with the program the code will be pushed to the development branch and if there are no further bugs will be then merged to the main branch.
+By using the Angular services creating a component ensures that the code for front-end and serverside are separeted to organize the code for each compenent.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Data Structurs 
 
-## Code scaffolding
+For now, the data collected will be stored in LocalStorage for the webite to function. The user's data will be collected like email, date of birth and full name. The group data structure will consist on the members of the channel, the admins, group ID and name of the group.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+User represents username, password, birthdate, email.
 
-## Build
+## Angular Architecture
+List of components:
+- AccountComponent
+    - This component is where users can view their profile. 
+- LoginComponent
+    - This is where users will have to login in order to use the software.
+- VerificationComponent
+    - This page will show up after the login page to verify the user.
+- Chat component
+    - this component will have the main codes such us the group chats and more.
+- Group-management component
+    - this would only be accessable to group admins and super admins. This page is where admins can create and delete groups.
+- Nav component
+    - this is the page only seen by the admins where they can edit the groups and add or delete users and their roles.
+- Roles component 
+    - this is the component available for admins only and they can add or remove roles from users.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Each component has a route created to use and to navigate to those pages.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## API
+The Login component has a function once the submit button is clicked the information of the user is saved allowing the to view the website either as a user or an admin.
