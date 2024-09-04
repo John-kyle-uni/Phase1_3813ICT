@@ -15,9 +15,8 @@ export class VerificationComponent {
   email:string ='';
 
   users = [
-    { username: 'super',birthdate: '27 november 2000' ,email:'superadmin@email.com', password: '123'},
-    { username: 'user',birthdate: '27 march 2000' ,email:'user@email.com', password: 'user1' },
-    { username: 'groupadmin',birthdate: '27 may 2002',email:'groupadmin@email.com', password: 'admin'}
+    { username: 'user1',birthdate: '27 november 2000' ,email:'user1@email.com', password: 'user1'},
+    { username: 'user2',birthdate: '27 march 2000' ,email:'user2@email.com', password: 'user2' },
   ];
 
   constructor(private router: Router ) {}
@@ -28,7 +27,7 @@ export class VerificationComponent {
   
       if (user) {
         localStorage.setItem('username',this.username);
-        this.router.navigate(['/nav']);
+        this.router.navigate(['/user-dashboard']);
   
       } else {
         alert('Account Invalid, Try Again');

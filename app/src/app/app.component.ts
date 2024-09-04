@@ -7,12 +7,13 @@ import { VerificationComponent } from '../verification/verification.component';
 import { RolesComponent } from '../roles/roles.component';
 import { GroupManagementComponent } from '../group-management/group-management.component';
 import { NavComponent } from '../nav/nav.component';
+import { UserDashboardComponent } from '../user-dashboard/user-dashboard.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet,LoginComponent,AccountComponent,ChatComponent,
-    VerificationComponent,RolesComponent,GroupManagementComponent,NavComponent,RouterLink],
+    VerificationComponent,RolesComponent,GroupManagementComponent,NavComponent,UserDashboardComponent,RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
