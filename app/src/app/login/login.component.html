@@ -1,0 +1,41 @@
+<style>
+
+
+ .form1 
+ {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 10vh;
+ }
+ .level1
+ {
+    align-items: center;
+    display: flex;
+    min-height: 5vh;
+ }
+
+
+</style>
+<body>
+<div class = "form1" >
+    <form (ngSubmit)="login()">
+        <div class = "level1">
+            <label for="username">Username:</label>
+            <input type="text" id="username" [(ngModel)]="username" name="username" required>
+        </div>
+        <div  class = "level1" >
+            <label for="password">Password:</label>
+            <input type="password" id="password" [(ngModel)]="password" name="password" required>
+        </div>
+        <div  class = "level1" >
+            <label for="email">Email:</label>
+            <input type="text" id="email" [(ngModel)]="email" name="email" required>
+        </div>
+        <div  class = "level1">
+            <button type="submit">Login</button>
+        </div>
+            
+  </form>
+</div>
+</body>
