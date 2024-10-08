@@ -26,6 +26,7 @@ export class UserCreateComponent implements OnInit {
   setItem() {
     this.JsonServiceComponent.setItem(this.username, this.email);
     console.log(this.JsonServiceComponent.jsonItems);
+    this.router.navigate(['/nav']);
   }
 
   ngOnInit() {}

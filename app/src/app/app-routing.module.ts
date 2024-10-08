@@ -29,6 +29,11 @@ import { UserCreateComponent } from './user-create/user-create.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { UserGetComponent } from './user-get/user-get.component';
 import { JsonServiceComponent } from './json-service/json-service.component';
+import { SocketService } from './services/socket.service';
+import { FormsModule } from '@angular/forms';
+import { AppComponent } from './app.component';
+import { CommonModule } from '@angular/common';
+
 
 
 
@@ -37,7 +42,7 @@ export const routes: Routes = [
     { path: '', redirectTo: '/nav', pathMatch: 'full' },
     {path: 'login', component:LoginComponent},
     {path: 'account', component:AccountComponent},
-    {path: 'chat', component:ChatComponent},
+    { path: 'chat', loadComponent: () => import('./chat/chat.component').then(m => m.ChatComponent) },
     {path: 'nav' , component: NavComponent},
     {path: 'user-dashboard', component: UserDashboardComponent},
     {path: 'verification', component:VerificationComponent},
@@ -50,8 +55,11 @@ export const routes: Routes = [
 ];
 
 @NgModule ({
-    imports: [RouterModule.forRoot(routes)],
+    declarations: [],
+    imports: [RouterModule.forRoot(routes),FormsModule,CommonModule],
     exports: [RouterModule],
+    providers: [SocketService],
+    bootstrap: [AppComponent]
 })
 
 export class AppRoutingModule {}

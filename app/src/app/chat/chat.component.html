@@ -1,1 +1,30 @@
-<h1>chat works</h1>
+
+<body>
+    <!-- <h1>Chat</h1>
+    <div>  
+        <input #messageInput type="text" placeholder="Enter message" />
+        <button (click)="sendMessage(messageInput.value)">Send Message</button>
+    </div> -->
+    <div class = "container">
+      <form>
+        <div class = "form1">
+          <label for = "messagecontent"> New Message</label>
+          <input type="text" [(ngModel)]="messagecontent" name = "messagecontent" id = "messagecontent" class = "control">
+        </div>
+        <div class = "form1">
+          <button (click) = "chat()" class = "btn_send_mes" > Send</button>
+        </div>
+      </form>
+        
+    </div>
+    <div><ul>
+      <li *ngFor="let message of messages" class="message">
+        {{ message }} <!-- Display each message -->
+      </li>
+    </ul></div>
+</body>
+
+
+
+
+<!-- <router-outlet></router-outlet> -->
