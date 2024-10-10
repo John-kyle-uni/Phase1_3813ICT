@@ -1,8 +1,104 @@
+<style>
+    main {
+      width: 60%;
+      min-height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem;
+      box-sizing: inherit;
+      position: relative;
+      background: linear-gradient(90deg, #C7C5F4, #776BCC);
+      margin-left: 15%;
+    }
+  
+  
+    .content {
+      display: flex;
+      justify-content: space-around;
+      width: 0%;
+      margin-bottom: 22rem;
+      margin-left: 0%;
+    }
+  
+    .content h1 {
+      margin-top: 1.75rem;
+      margin-left: 8rem;
+    }
+  
+    .content p {
+      margin-top: 1.5rem;
+    }
+  
+    .pill-group {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 1.25rem;
+}
+
+  
+    .pill {
+      display: flex;
+      align-items: center;
+      --pill-accent: var(--bright-blue);
+      background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
+      color: var(--pill-accent);
+      padding-inline: 2rem;
+      padding-block: 1rem;
+      border-radius: 2rem;
+      border: 0;
+      transition: background 0.3s ease;
+      font-family: var(--inter-font);
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.4rem;
+      letter-spacing: -0.00875rem;
+      text-decoration: solid;
+    }
+  
+    .pill:hover {
+      background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
+    }
+  
+    .pill-group .pill:nth-child(6n + 1) {
+      --pill-accent: var(--bright-blue);
+    }
+    .pill-group .pill:nth-child(6n + 2) {
+      --pill-accent: var(--french-violet);
+    }
+    .pill-group .pill:nth-child(6n + 3),
+    .pill-group .pill:nth-child(6n + 4),
+    .pill-group .pill:nth-child(6n + 5) {
+      --pill-accent: var(--hot-red);
+    }
+  
+    .nav-link
+    {
+      text-decoration: none;
+    }
+    @media screen and (max-width: 650px) {
+      .content {
+        flex-direction: column;
+        width: max-content;
+      }
+    }
+    .heading
+    {
+      display: flex;
+      align-items: center;
+      margin-left: 50%;
+      margin-bottom: 100px;
+    }
+  
+</style>
+
 <main class="main">
   <div class="content">
-    <div class="left-side">
-      <h1>Hello</h1>
-      <h2>Welcome!</h2>
+      <h1 class ="heading">Welcome</h1>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
@@ -15,6 +111,5 @@
         </ul>
         
 
-    </div>
   </div>
 </main>

@@ -7,9 +7,12 @@ By using the Angular services creating a component ensures that the code for fro
 
 ## Data Structurs 
 
+### Old
 For now, the data collected will be stored in LocalStorage for the webite to function. The user's data will be collected like email, date of birth and full name. The group data structure will consist on the members of the channel, the admins, group ID and name of the group.
 
 User represents username, password, birthdate, email.
+### New
+
 
 ## Angular Architecture
 List of components:

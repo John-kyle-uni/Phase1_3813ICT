@@ -72,7 +72,7 @@
       justify-content: space-around;
       width: 100%;
       max-width: 700px;
-      margin-bottom: 3rem;
+      margin-bottom: 20rem;
     }
   
     .content h1 {
@@ -137,16 +137,27 @@
         width: max-content;
       }
     }
+    .heading
+    {
+      display: flex;
+      align-items: center;
+      margin-left: 40%;
+      margin-bottom: 100px;
+    }
   </style>
   
   <main class="main">
     <div class="content">
     <div class="right-side">
-  
+      <h1 class = "heading">HOME</h1>
+
         <ul class="pill-group">
           <li class="pill"><a class="nav-link" routerLink="/home">Login</a></li>
           <li class="pill"><a class="nav-link" routerLink="/chat">Chat</a></li>
           <li class="pill"><a class="nav-link" routerLink="/account">Account</a></li>
+          <li class = "pill"><a class="nav-link"[routerLink]="['/userCreate']">create</a></li>
+          <li class = "pill"><a class="nav-link" [routerLink]="['/userGet']">show users</a></li>
+
           </ul>
           
   
@@ -155,17 +166,15 @@
     
 
   </main>
-<div>
-  <h1>Dashboard</h1>
+<div class = "main1">
 <nav>
-  <ul>
-    <li><a [routerLink]="['/nav']">Dashboard</a></li>
-    <li><a [routerLink]="['/userCreate']">create</a></li>
-    <li><a [routerLink]="['/userEdit']">edit</a></li>
-    <li><a [routerLink]="['/userGet']">show users</a></li>
+  <ul class="pill-group">
+    
+    
 
   </ul>
 </nav>
+</div>
 
 <!-- List groups with links to their details -->
 <!-- <h2>Groups</h2>

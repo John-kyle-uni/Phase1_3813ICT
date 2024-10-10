@@ -1,3 +1,94 @@
+<style>
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
+    margin: 0;
+    padding: 20px;
+}
+
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(90deg, #C7C5F4, #776BCC);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form Fields */
+.form1 {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    border-color: #cbdff5;
+    box-shadow: 0 0 5px rgba(165, 202, 243, 0.5);
+    outline: none;
+}
+
+
+.btn1 {
+    background-color: #f8b9f3;
+    color: #ffffff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn1:hover {
+    background-color: #fabfff;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    .btn1 {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    input {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+
+</style>
 <body>
     <div class = "container" >
         <form (submit) = "addnewUser($event)">
@@ -24,14 +115,18 @@
                 <input type = "text" class = "form2" id = "roles" [(ngModel)]="roles" name = "roles"> 
             </div>
             <div class = "form1">
-                <button type = "submit" class = "btn1" >  <i class="fa fa-plus-square"></i> Add User </button>
+                <button type = "submit" class = "btn1" >  <i class="fa fa-plus-square" ></i> Add User </button>
             </div>
+            
             <div [@noticeState] = "noticeName" class=" alert1 " role="alert">
                 {{newUserMessage}}</div>
 
 
 
         </form>
+        <!-- <div class = "form1">
+            <button type = "submit" class = "btn1" >  <i class="fa fa-plus-square" [routerLink]="['/nav']" ></i>Back </button>
+        </div> -->
             
                 
     </div>
