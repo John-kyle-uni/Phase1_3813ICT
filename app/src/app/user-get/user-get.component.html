@@ -1,23 +1,26 @@
 <p>user-get works!</p>
-<table class = "table">
-    <thead>
-        <tr>
-            <td>ID</td>
-            <td>Username</td>
-            <td>Email</td>
-            <td>Roles</td>
-            <td>Groups</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor = "let user of users">
-            <td>{{ user.username }}</td>
-            <td>{{ user.email }}</td>
-            <td>{{ user.roles }}</td>
-            <td>{{ user.groups }}</td>
-            <!-- <td><button (click)="deleteUser(user)">delete</button></td>
-            <td><button (click)="updateUser(user)">edit</button></td> -->
-            <td>{{ user.groups }}</td>
-        </tr>
-    </tbody>
-</table>
+<div>
+    <table class = "table">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Username</td>
+                <td>Email</td>
+                <td>Roles</td>
+                <td>Groups</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let user of users" class = "users">
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.roles }}</td>
+                <td><a class = "btn1" [routerLink]="['/userEdit', user.id]"><i class="fa fa-edit">Edit</i></a>
+                <!-- <td><button class = "btn1" [routerlink] ="['/userEdit', user.id]"><i class="fa fa-edit">Edit</i></button> -->
+                &nbsp; <span class = 'btn1' (click) = "deleteuser(user.id)"><i class="fa fa-trash">Edit</i></span></td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>

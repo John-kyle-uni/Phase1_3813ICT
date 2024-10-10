@@ -1,24 +1,38 @@
-
-<h3>user-create</h3>
-
 <body>
-    <div class = "form1" >
-        
-            <div class = "level1">
-                <label for="username">Username:</label>
-                <input type="text" id="username" [(ngModel)]="username" name="username" required>
+    <div class = "container" >
+        <form (submit) = "addnewUser($event)">
+            <div class = "form1">
+                <label  for="userid">User ID</label> 
+                <input type="Number" class = "form2" id = "userid" [(ngModel)]="userid" (ngModelChange)="checkvalidid($event)"
+                name="userid" placeholder="ID">
+                <!-- <div [@iderrorState] = "stateName" class="alert1" id = "iderrormsg" role ="alert">{{iderrormsg}}{{iderrormsg2}}</div> -->
             </div>
-            <div  class = "level1" >
-                <label for="password">Password:</label>
-                <input type="password" id="password" [(ngModel)]="password" name="password" required>
+            <div class = "form1">
+                <label for=" userid"> Username</label>
+                <input type = "text" class = "form2" id = "username" [(ngModel)]="username" name = "username"> 
             </div>
-            <div  class = "level1" >
-                <label for="email">Email:</label>
-                <input type="text" id="email" [(ngModel)]="email" name="email" required>
+            <div class = "form1">
+                <label for=" userid"> Password</label>
+                <input type = "text" class = "form2" id = "password" [(ngModel)]="password" name = "password"> 
             </div>
-            <div  class = "level1">
-                <button type="submit" (click)="setItem()">Login</button>
+            <div class = "form1">
+                <label for=" userid"> Email</label>
+                <input type = "text" class = "form2" id = "email" [(ngModel)]="email" name = "email"> 
             </div>
+            <div class = "form1">
+                <label for=" userid"> Roles</label>
+                <input type = "text" class = "form2" id = "roles" [(ngModel)]="roles" name = "roles"> 
+            </div>
+            <div class = "form1">
+                <button type = "submit" class = "btn1" >  <i class="fa fa-plus-square"></i> Add User </button>
+            </div>
+            <div [@noticeState] = "noticeName" class=" alert1 " role="alert">
+                {{newUserMessage}}</div>
+
+
+
+        </form>
+            
                 
     </div>
-    </body>
+</body>

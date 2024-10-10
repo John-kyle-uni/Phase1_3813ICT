@@ -22,9 +22,7 @@ import { VerificationComponent } from '../app/verification/verification.componen
 import path from 'path';
 import { AuthGuard } from '../auth.guard';
 import { NavComponent } from '../app/nav/nav.component';
-import { UserDashboardComponent } from '../app/user-dashboard/user-dashboard.component';
 import { HomeComponent } from '../app/home/home.component';
-import { SignUpComponent } from '../app/sign-up/sign-up.component';
 import { UserCreateComponent } from './user-create/user-create.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { UserGetComponent } from './user-get/user-get.component';
@@ -33,6 +31,9 @@ import { SocketService } from './services/socket.service';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClient, HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 
 
 
@@ -44,10 +45,8 @@ export const routes: Routes = [
     {path: 'account', component:AccountComponent},
     { path: 'chat', loadComponent: () => import('./chat/chat.component').then(m => m.ChatComponent) },
     {path: 'nav' , component: NavComponent},
-    {path: 'user-dashboard', component: UserDashboardComponent},
     {path: 'verification', component:VerificationComponent},
     {path: 'home' , component:HomeComponent},
-    {path: 'signup' , component:SignUpComponent},
     {path: 'userCreate' , component:UserCreateComponent},
     {path: 'userEdit' , component:UserEditComponent},
     {path: 'userGet' , component:UserGetComponent}
@@ -56,9 +55,9 @@ export const routes: Routes = [
 
 @NgModule ({
     declarations: [],
-    imports: [RouterModule.forRoot(routes),FormsModule,CommonModule],
+    imports: [RouterModule.forRoot(routes),FormsModule,CommonModule,BrowserAnimationsModule,BrowserModule,HttpClientModule],
     exports: [RouterModule],
-    providers: [SocketService],
+    providers: [SocketService,JsonServiceComponent,provideHttpClient(withFetch())],
     bootstrap: [AppComponent]
 })
 
