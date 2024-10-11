@@ -116,6 +116,7 @@ export class UserCreateComponent implements OnInit {
       }, error => {
         console.error('Error adding user', error);
       });
+      alert('User added')
   }
   
 }
