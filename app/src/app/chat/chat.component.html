@@ -125,7 +125,7 @@ ul {
         
     </div>
     <div><ul>
-      <li *ngFor="let message of messages" class="message">
+      <li *ngFor="let message of messages" class="message"  [ngClass]="{'join-message': message.includes('joined')}">
         {{ message }} <!-- Display each message -->
       </li>
     </ul></div>

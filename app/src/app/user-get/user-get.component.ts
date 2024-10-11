@@ -1,12 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Router,RouterModule } from '@angular/router';
 import { UserdataService } from '../services/userdata.service';
-import { Users } from '../models/users';
+// import { Users } from '../models/users';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
-4
+import { HttpClient } from '@angular/common/http';
 
+
+interface Users {
+  id: number,
+  username: string,
+  password: string,
+  email: string,
+  roles: string
+}
 
 
 @Component({
@@ -19,11 +27,22 @@ import { Subscription } from 'rxjs';
 
 export class UserGetComponent implements OnInit {
   users: Users[] = [];
-  constructor(private userdata: UserdataService,private router:Router) {}
+  constructor(private userdata: UserdataService,private router:Router, private http: HttpClient) {}
   ngOnInit() {
-    this.userdata.getlist().subscribe((data)=>{
-      this.users = data;
-    })
+    console.log('Initializing component and fetching users...');
+    this.getUsers();
+    }
+  
+  getUsers() {
+    this.http.get<Users[]>('http://localhost:3000/api/getlist').subscribe(
+      (data) => {
+          console.log('Fetched users:', data); // Log the data
+          this.users = data; 
+      },
+      (error) => {
+        console.error('Error fetching users:', error);
+      }
+    );
   }
   deleteuser(id:number) {
     if(confirm("Are you sure?")) {

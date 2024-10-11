@@ -18,12 +18,14 @@ export class ChatComponent implements OnInit{
    messagecontent: string="";
    messages: string[] = [];
    ioConnection: any;
+   username: string = 'User';
 
    constructor(private socketService: SocketService){
 
    }
    ngOnInit() {
      this.initIoConnection();
+     this.notifyUserJoin(); 
    }
    private initIoConnection(){
     this.socketService.initSocket();
@@ -40,6 +42,11 @@ export class ChatComponent implements OnInit{
         console.log("no message")
       }
    }
+   notifyUserJoin() {
+    const joinMessage = `${this.username} has joined the chat.`;
+    this.socketService.send(joinMessage); 
+   
+  }
    
 }
 

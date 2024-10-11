@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { io, Socket } from 'socket.io-client';
 // import io, { Socket } from 'socket.io-client';
 const SERVER_URL = 'http://localhost:3000';
@@ -9,11 +9,23 @@ const SERVER_URL = 'http://localhost:3000';
 export class SocketService {
 
   private socket!: Socket;
+  private userJoinedSubject = new Subject<string>();
   constructor(){}
+
 
   initSocket(){
     this.socket = io(SERVER_URL);
+
+    this.socket.on('user-joined', (username: string) => {
+      this.userJoinedSubject.next(`${username} has joined the chat`);
+    });
+
     return()=>{this.socket.disconnect();}
+
+  }
+
+  notifyUserJoined(username: string) {
+    this.socket.emit('user-joined', username);
   }
 
   send(message:string) {
@@ -32,6 +44,7 @@ export class SocketService {
       } else {
         console.error('Socket not initialized.');  
       }
+  
     });
   }
   

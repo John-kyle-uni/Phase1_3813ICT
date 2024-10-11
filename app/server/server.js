@@ -9,7 +9,12 @@ const io = require('socket.io')(http,{
     methods: ["GET", "POST"],
   }
 });
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:4200', 
+  methods: ['GET', 'POST'],       
+  credentials: true
+}));
+
 // --------------------------------------
 const {MongoClient, ObjectID} = require('mongodb'),
 client = new MongoClient('mongodb://localhost:27017');
@@ -40,7 +45,6 @@ async function main() {
   require('./routes/api-usercount.js')(db,app)
   require('./routes/api-verify.js')(db,app)
 
- 
 }
 // --------------------------------------------------------
  

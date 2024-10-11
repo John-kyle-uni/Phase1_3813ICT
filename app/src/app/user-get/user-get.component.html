@@ -63,29 +63,35 @@ body {
 
 </style>
 
-
 <div>
-    <table class = "table">
-        <thead>
-            <tr>
-                <td>ID</td>
-                <td>Username</td>
-                <td>Email</td>
-                <td>Roles</td>
-                <td>Groups</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor = "let user of users" class = "users">
-                <td>{{ user.id }}</td>
-                <td>{{ user.username }}</td>
-                <td>{{ user.email }}</td>
-                <td>{{ user.roles }}</td>
-                <td><a class = "btn1" [routerLink]="['/userEdit', user.id]"><i class="fa fa-edit">Edit</i></a>
-                <!-- <td><button class = "btn1" [routerlink] ="['/userEdit', user.id]"><i class="fa fa-edit">Edit</i></button> -->
-                &nbsp; <span class = 'btn1' (click) = "deleteuser(user.id)"><i class="fa fa-trash">Edit</i></span></td>
-            </tr>
-        </tbody>
+    <h2>User List</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Roles</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.roles}}</td>
+          <td>
+            <a class="btn1" [routerLink]="['/userEdit', user.id]">
+              <i class="fa fa-edit">Edit</i>
+            </a>
+            &nbsp;
+            <span class="btn1" (click)="deleteuser(user.id)">
+              <i class="fa fa-trash">Delete</i>
+            </span>
+          </td>
+        </tr>
+      </tbody>
     </table>
-    
-</div>
+  </div>
+  

@@ -50,7 +50,7 @@ export class UserCreateComponent implements OnInit {
   iderrorshow:boolean = false;
   noticeshow:boolean = false;
 
-  constructor(private userdata: UserdataService) {}
+  constructor(private userdata: UserdataService, private http:HttpClient) {}
   ngOnInit(){
     
   }
@@ -100,6 +100,22 @@ export class UserCreateComponent implements OnInit {
         this.iderrormsg2 = "";
       }
     });
+  }
+  addUser() {
+    const userData = {
+      id: this.userid,
+      username: this.username,
+      password: this.password,
+      email: this.email,
+      roles: this.roles
+    };
+
+    this.http.post('http://localhost:3000/api/add', userData)
+      .subscribe(response => {
+        console.log('User added successfully', response);
+      }, error => {
+        console.error('Error adding user', error);
+      });
   }
   
 }
